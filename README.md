@@ -1,7 +1,14 @@
 # emberfire-embeddeds-child-hasmany-delete
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Sample application to show and debug emberfire embedded hasmany child removal bug.
+
+Steps to reproduce bug:
+
+* Click `Reset Database` button to populate database with sample data
+* Refresh page to be sure of good initial state
+* Remove one of participants from sample expense
+* Refresh page
+* Removed participant should be removed but is back if fix was not introduced
 
 ## Prerequisites
 
