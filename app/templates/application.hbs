@@ -1,0 +1,26 @@
+<h2 id="title">Welcome to Ember</h2>
+
+<button {{action "resetDatabase"}}>
+  Reset database
+</button>
+
+{{#if model}}
+  <div>
+    <h2>Event {{model.name}}</h2>
+
+    <h3>Expenses</h3>
+    {{#each model.expenses as |expense|}}
+      <div>
+        <h4>Expense: {{expense.name}}</h4>
+
+        <ul>
+          {{#each expense.participants as |participant|}}
+            <li>{{participant.name}} <button {{action "remove" expense participant}}>Remove</button></li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/each}}
+  </div>
+{{/if}}
+
+{{outlet}}
